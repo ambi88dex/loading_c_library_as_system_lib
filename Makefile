@@ -9,14 +9,16 @@ CFLAGS = -fPIC -Wall
 # Shared Library Name
 LIB_NAME = libmy_functions.so
 
+# Directories
+LIB_DIR = lib
+
 # Source and Object Files
-LIB_SRC = my_functions.c
-LIB_OBJ = my_functions.o
+LIB_SRC = $(LIB_DIR)/my_functions.c
+LIB_OBJ = $(LIB_DIR)/my_functions.o
 MAIN_SRC = main.c
-MAIN_OBJ = main.o
 
 # Include Paths
-INCLUDE = -I$(CURDIR)
+INCLUDE = -I$(LIB_DIR)
 
 # Output Executable
 OUTPUT = main
@@ -43,4 +45,3 @@ clean:
 # Run the program
 run: $(OUTPUT)
 	LD_LIBRARY_PATH=$(CURDIR) ./$(OUTPUT)
-
